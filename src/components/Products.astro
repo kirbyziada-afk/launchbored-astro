@@ -1,0 +1,39 @@
+---
+// Products.astro
+interface Product {
+    name: string;
+    description: string;
+    status: string;
+    bgColor: string;
+    textColor: string;
+}
+interface Props {
+  title: string;
+  subtitle: string;
+  products: Product[];
+}
+const { title, subtitle, products } = Astro.props;
+---
+<section class="products stack-section" id="products">
+    <div class="stack-inner bg-main">
+        <div class="container content-wrapper">
+            <div class="section-header reveal">
+                <h2 class="section-title text-main">{title}</h2>
+                <p class="section-desc text-muted">{subtitle}</p>
+            </div>
+            <div class="product-grid reveal">
+                {products.map(product => (
+                    <div class="product-card shadow-sm">
+                        <div class="product-img-placeholder" style={`background: ${product.bgColor};`}>
+                            <span class="badge" style={`color: ${product.textColor};`}>{product.status}</span>
+                        </div>
+                        <div class="product-info bg-main">
+                            <h3 class="text-main">{product.name}</h3>
+                            <p class="text-muted">{product.description}</p>
+                        </div>
+                    </div>
+                ))}
+            </div>
+        </div>
+    </div>
+</section>

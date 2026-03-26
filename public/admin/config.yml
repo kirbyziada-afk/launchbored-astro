@@ -1,0 +1,56 @@
+backend:
+  name: git-gateway
+  branch: main # Branch to update (optional; defaults to master)
+
+# This enables local testing via npx decap-server
+local_backend: true
+
+media_folder: "public/images"
+public_folder: "/images"
+
+collections:
+  - name: "pages"
+    label: "Pages"
+    files:
+      - file: "src/content/pages/homepage.json"
+        label: "Homepage"
+        name: "homepage"
+        fields:
+          - {label: "Hero Title", name: "heroTitle", widget: "string"}
+          - {label: "Hero Subtitle", name: "heroSubtitle", widget: "text"}
+          
+          - {label: "Intro Title", name: "introTitle", widget: "string"}
+          - {label: "Intro Description", name: "introDescription", widget: "text"}
+          
+          - {label: "About Title", name: "aboutTitle", widget: "string"}
+          - {label: "About Content", name: "aboutContent", widget: "text"}
+          
+          - {label: "Products Title", name: "productsTitle", widget: "string"}
+          - {label: "Products Subtitle", name: "productsSubtitle", widget: "string"}
+          - label: "Live Products"
+            name: "liveProducts"
+            widget: "list"
+            fields:
+              - {label: "Name", name: "name", widget: "string"}
+              - {label: "Description", name: "description", widget: "string"}
+              - {label: "Status", name: "status", widget: "string"}
+              - {label: "Background Color", name: "bgColor", widget: "string", default: "#f1f1f1"}
+              - {label: "Text Color", name: "textColor", widget: "string", default: "#111"}
+          
+          - {label: "Coming Soon Title", name: "comingSoonTitle", widget: "string"}
+          - {label: "Coming Soon Subtitle", name: "comingSoonSubtitle", widget: "string"}
+          - label: "Upcoming Products"
+            name: "upcomingProducts"
+            widget: "list"
+            fields:
+              - {label: "Name", name: "name", widget: "string"}
+              - {label: "Description", name: "description", widget: "string"}
+          
+          - {label: "Waitlist Title", name: "waitlistTitle", widget: "string"}
+          - {label: "Waitlist Subtitle", name: "waitlistSubtitle", widget: "string"}
+          - {label: "Waitlist Button Text", name: "waitlistButtonText", widget: "string"}
+          
+          - {label: "Contact Title", name: "contactTitle", widget: "string"}
+          - {label: "Contact Subtitle", name: "contactSubtitle", widget: "string"}
+          
+          - {label: "Footer Title", name: "footerTitle", widget: "string"}

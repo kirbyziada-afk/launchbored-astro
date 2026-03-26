@@ -1,0 +1,28 @@
+---
+// Footer.astro
+interface Props {
+  title: string;
+}
+const { title } = Astro.props;
+---
+<footer class="footer stack-section text-center align-center justify-center" id="footer">
+    <div class="stack-inner bg-main" style="min-height: 100vh;">
+        <div class="container content-wrapper" style="height: 100%; display: flex; flex-direction: column; justify-content: space-between; padding-top: 20vh; padding-bottom: 5vh;">
+            <div>
+                <h2 class="section-title text-main text-rainbow" style="font-size: clamp(3rem, 10vw, 8rem); margin-bottom: 20px;">{title}</h2>
+                <p class="text-muted">Need an unfair advantage? Hire us.</p>
+                <a href="mailto:hello@launchbored.com" class="text-main" style="font-size: 1.5rem; font-weight: bold; margin-top: 20px; display: inline-block;">hello@launchbored.com</a>
+            </div>
+            
+            <div style="margin-top: 60px; padding-top: 40px; border-top: 1px solid rgba(0,0,0,0.1); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 20px;">
+                <img src="/LaunchBored logo.svg" alt="Launch Bored Logo" style="height: 40px;">
+                <div style="display: flex; gap: 20px;">
+                    <a href="#" class="text-muted nav-link" style="color: var(--text-muted) !important;">Twitter</a>
+                    <a href="#" class="text-muted nav-link" style="color: var(--text-muted) !important;">Dribbble</a>
+                    <a href="#" class="text-muted nav-link" style="color: var(--text-muted) !important;">Instagram</a>
+                </div>
+                <p style="font-size: 0.9rem;">&copy; 2026 Launch Bored. All rights reserved.</p>
+            </div>
+        </div>
+    </div>
+</footer>

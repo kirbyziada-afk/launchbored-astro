@@ -1,0 +1,19 @@
+---
+// Intro.astro
+interface Props {
+  title: string;
+  description: string;
+}
+const { title, description } = Astro.props;
+---
+<section class="intro stack-section" id="intro">
+    <div class="stack-inner bg-main text-center">
+        <div class="container content-wrapper">
+            <h2 class="section-title text-main">{title}</h2>
+            <p class="section-desc text-muted">{description}</p>
+            <div style="margin-top: 40px;">
+                <a href="#products" class="btn btn-primary btn-large">See Our Work</a>
+            </div>
+        </div>
+    </div>
+</section>

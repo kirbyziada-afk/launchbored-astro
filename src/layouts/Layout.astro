@@ -1,0 +1,30 @@
+---
+import '../styles/style.css';
+
+interface Props {
+	title: string;
+    description?: string;
+}
+
+const { title, description = "Launch Bored - We build affordable products because we're bored." } = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content={description}>
+    <title>{title}</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Outfit:wght@400;500;700&family=Oswald:wght@700&display=swap" rel="stylesheet">
+</head>
+<body class="bg-dark">
+    <div class="custom-cursor"></div>
+    <slot />
+    <script>
+        import '../scripts/script.js';
+    </script>
+</body>
+</html>

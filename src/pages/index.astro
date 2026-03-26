@@ -1,0 +1,55 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Hero from '../components/Hero.astro';
+import Intro from '../components/Intro.astro';
+import About from '../components/About.astro';
+import Products from '../components/Products.astro';
+import ComingSoon from '../components/ComingSoon.astro';
+import Waitlist from '../components/Waitlist.astro';
+import Contact from '../components/Contact.astro';
+import Footer from '../components/Footer.astro';
+
+import { getEntry } from 'astro:content';
+
+// Query the JSON parsed from Decap CMS
+const homepageEntry = await getEntry('pages', 'homepage');
+const data = homepageEntry.data;
+---
+<Layout title="Launch Bored | Creative Agency">
+    <Header />
+    <main class="stack-wrapper">
+        <Hero 
+            title={data.heroTitle} 
+            subtitle={data.heroSubtitle}
+        />
+        <Intro 
+            title={data.introTitle} 
+            description={data.introDescription}
+        />
+        <About 
+            title={data.aboutTitle} 
+            content={data.aboutContent}
+        />
+        <Products 
+            title={data.productsTitle} 
+            subtitle={data.productsSubtitle}
+            products={data.liveProducts}
+        />
+        <ComingSoon 
+            title={data.comingSoonTitle} 
+            subtitle={data.comingSoonSubtitle}
+            products={data.upcomingProducts}
+        />
+        <Waitlist 
+            title={data.waitlistTitle} 
+            subtitle={data.waitlistSubtitle}
+            buttonText={data.waitlistButtonText}
+        />
+        <Contact 
+            title={data.contactTitle} 
+            subtitle={data.contactSubtitle}
+        />
+        <Footer title={data.footerTitle} />
+    </main>
+</Layout>

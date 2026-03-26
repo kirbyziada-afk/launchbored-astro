@@ -1,0 +1,46 @@
+---
+// Contact.astro
+interface Props {
+  title: string;
+  subtitle: string;
+}
+const { title, subtitle } = Astro.props;
+---
+<section class="contact stack-section" id="contact">
+    <div class="stack-inner bg-dark">
+        <div class="container content-wrapper reveal" style="justify-content: flex-start; padding-top: 15vh; padding-bottom: 20vh;">
+            <div class="section-header">
+                <h2 class="section-title text-rainbow">{title}</h2>
+                <p class="section-desc text-white">{subtitle}</p>
+            </div>
+            <div class="contact-wrapper premium-dark-card">
+                <form class="contact-form" style="text-align: left;">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="name" class="text-white">Name</label>
+                            <input type="text" id="name" class="premium-input" placeholder="John Doe" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email" class="text-white">Email</label>
+                            <input type="email" id="email" class="premium-input" placeholder="john@example.com" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="budget" class="text-white">Budget</label>
+                        <select id="budget" class="premium-input premium-select" required>
+                            <option value="" disabled selected>Select a budget...</option>
+                            <option value="30k-50k" style="color: #000;">Starting at $30k</option>
+                            <option value="50k-100k" style="color: #000;">$50k - $100k</option>
+                            <option value="100k+" style="color: #000;">$100k+</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="message" class="text-white">Message</label>
+                        <textarea id="message" class="premium-input" rows="4" placeholder="Tell us about your idea..." required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-large" style="width: 100%; background: #fff; color: #000; margin-top: 10px;">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>

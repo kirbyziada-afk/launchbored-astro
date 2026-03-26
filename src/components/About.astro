@@ -1,0 +1,16 @@
+---
+// About.astro
+interface Props {
+  title: string;
+  content: string;
+}
+const { title, content } = Astro.props;
+---
+<section class="about stack-section" id="about">
+    <div class="stack-inner bg-dark">
+        <div class="container content-wrapper">
+            <h2 class="section-title text-rainbow text-center" style="font-size: clamp(2.5rem, 6vw, 5rem); margin-bottom: 40px;">{title}</h2>
+            <p class="scroll-reveal-text" style="font-size: clamp(1.8rem, 3.5vw, 3rem); font-weight: 500; line-height: 1.4; color: rgba(255,255,255,0.15); max-width: 1000px;">{content}</p>
+        </div>
+    </div>
+</section>

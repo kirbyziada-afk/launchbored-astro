@@ -1,0 +1,40 @@
+{
+  "heroTitle": "We build<br>affordable<br>products",
+  "heroSubtitle": "Because we're bored. Supercharge your ideas with our creative engineering and playful design.",
+  "introTitle": "A Creative Agency",
+  "introDescription": "For people who want things built fast, affordable, and fun.",
+  "aboutTitle": "Why we do it",
+  "aboutContent": "We thrive on turning boredom into brilliant, affordable digital products. Everyday problems need fun, beautiful, and accessible solutions. We're not bound by traditional agency rules. If it sounds fun, we build it. From idea to launch in record time, without compromising on quality.",
+  "productsTitle": "Our Live Products",
+  "productsSubtitle": "Things we built because we had a free weekend. Go ahead, give 'em a try.",
+  "liveProducts": [
+    {
+      "name": "Boredom Buster AI",
+      "description": "An AI that literally finds things for you to do.",
+      "status": "Live",
+      "bgColor": "#f1f1f1",
+      "textColor": "#111"
+    },
+    {
+      "name": "Focus Flow",
+      "description": "A beautifully simple pomodoro timer with zero settings.",
+      "status": "Live",
+      "bgColor": "#f8f8f8",
+      "textColor": "#111"
+    }
+  ],
+  "comingSoonTitle": "Coming Soon",
+  "comingSoonSubtitle": "We're brewing some magic. Here is a sneak peek.",
+  "upcomingProducts": [
+    {
+      "name": "Project X",
+      "description": "A revolutionary way to manage tasks."
+    }
+  ],
+  "waitlistTitle": "Join the Waitlist",
+  "waitlistSubtitle": "Be the first to know when we launch new stuff. No spam, ever.",
+  "waitlistButtonText": "Sign Me Up!",
+  "contactTitle": "Say Hello",
+  "contactSubtitle": "Whether you have a project in mind or just want to chat, drop us a line.",
+  "footerTitle": "LET'S BUILD IT"
+}

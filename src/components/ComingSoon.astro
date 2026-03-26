@@ -1,0 +1,35 @@
+---
+// ComingSoon.astro
+interface ComingSoonProduct {
+    name: string;
+    description: string;
+}
+interface Props {
+  title: string;
+  subtitle: string;
+  products: ComingSoonProduct[];
+}
+const { title, subtitle, products } = Astro.props;
+---
+<section class="coming-soon stack-section" id="coming-soon">
+    <div class="stack-inner bg-dark">
+        <div class="container content-wrapper">
+            <div class="section-header reveal">
+                <h2 class="section-title text-rainbow" set:html={title}></h2>
+                <p class="section-desc text-white" set:html={subtitle}></p>
+            </div>
+            <div class="product-grid reveal">
+                {products.map(product => (
+                    <div class="product-card coming-soon-card">
+                        <div class="product-img-placeholder" style="background: #222;">
+                        </div>
+                        <div class="product-info" style="background: #1a1a1a; color: #fff;">
+                            <h3>{product.name}</h3>
+                            <p style="color: #aaa;">{product.description}</p>
+                        </div>
+                    </div>
+                ))}
+            </div>
+        </div>
+    </div>
+</section>

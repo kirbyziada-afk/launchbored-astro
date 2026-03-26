@@ -1,0 +1,21 @@
+---
+// Waitlist.astro
+interface Props {
+  title: string;
+  subtitle: string;
+  buttonText: string;
+}
+const { title, subtitle, buttonText } = Astro.props;
+---
+<section class="waitlist stack-section" id="waitlist">
+    <div class="stack-inner bg-main text-center">
+        <div class="container content-wrapper reveal">
+            <h2 class="section-title text-main">{title}</h2>
+            <p class="section-desc text-muted mb-5">{subtitle}</p>
+            <form class="waitlist-form">
+                <input type="email" class="form-input" style="border: 2px solid #eaeaea;" placeholder="Enter your email address..." required>
+                <button type="submit" class="btn btn-primary btn-large">{buttonText}</button>
+            </form>
+        </div>
+    </div>
+</section>

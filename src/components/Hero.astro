@@ -1,0 +1,19 @@
+---
+// Hero.astro
+interface Props {
+  title: string;
+  subtitle: string;
+}
+const { title, subtitle } = Astro.props;
+---
+<section class="hero stack-section" id="hero">
+    <div class="stack-inner bg-dark">
+        <div class="hero-bg"></div>
+        <div class="container content-wrapper" style="align-items: center;">
+            <div class="hero-text" style="text-align: center; margin: 0 auto;">
+                <h1 class="hero-title animate-title text-rainbow" style="font-size: clamp(3rem, 8vw, 6rem); line-height: 1.1;" set:html={title}></h1>
+                <p class="hero-subtitle animate-fade-in text-white" style="margin-top: 20px;">{subtitle}</p>
+            </div>
+        </div>
+    </div>
+</section>
