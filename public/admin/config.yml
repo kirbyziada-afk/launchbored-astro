@@ -3,7 +3,7 @@ backend:
   branch: main # Branch to update (optional; defaults to master)
 
 # This enables local testing via npx decap-server
-local_backend: true
+# local_backend: true
 
 media_folder: "public/images"
 public_folder: "/images"
