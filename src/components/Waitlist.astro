@@ -11,7 +11,7 @@ const { title, subtitle, buttonText } = Astro.props;
     <div class="stack-inner bg-main text-center">
         <div class="container content-wrapper reveal">
             <h2 class="section-title text-main">{title}</h2>
-            <p class="section-desc text-muted mb-5">{subtitle}</p>
+            <p class="section-desc mb-5" style="color: #444;">{subtitle}</p>
             <form action="https://api.web3forms.com/submit" method="POST" class="waitlist-form">
                 <input type="hidden" name="access_key" value="d5758a69-a0f4-46d8-b437-7783e3d17b98">
                 <input type="hidden" name="subject" value="New Waitlist Subscriber from LaunchBored!">
