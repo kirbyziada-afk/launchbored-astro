@@ -17,13 +17,17 @@ const pagesCollection = defineCollection({
       description: z.string(),
       status: z.string(),
       bgColor: z.string(),
-      textColor: z.string()
+      textColor: z.string(),
+      image: z.string().nullable().optional(),
+      link: z.string().nullable().optional()
     })),
     comingSoonTitle: z.string(),
     comingSoonSubtitle: z.string(),
     upcomingProducts: z.array(z.object({
       name: z.string(),
-      description: z.string()
+      description: z.string(),
+      image: z.string().nullable().optional(),
+      link: z.string().nullable().optional()
     })),
     waitlistTitle: z.string(),
     waitlistSubtitle: z.string(),

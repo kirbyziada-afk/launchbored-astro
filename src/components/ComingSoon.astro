@@ -3,6 +3,8 @@
 interface ComingSoonProduct {
     name: string;
     description: string;
+    image?: string | null;
+    link?: string | null;
 }
 interface Props {
   title: string;
@@ -19,16 +21,18 @@ const { title, subtitle, products } = Astro.props;
                 <p class="section-desc text-white" set:html={subtitle}></p>
             </div>
             <div class="product-grid reveal">
-                {products.map(product => (
-                    <div class="product-card coming-soon-card">
-                        <div class="product-img-placeholder" style="background: #222;">
+                {products.map(product => {
+                    const CardElement = product.link ? 'a' : 'div';
+                    return (
+                    <CardElement href={product.link || undefined} target={product.link ? "_blank" : undefined} class="product-card coming-soon-card" style={product.link ? 'text-decoration: none; color: inherit; display: block; cursor: pointer;' : 'display: block;'}>
+                        <div class="product-img-placeholder" style={`background: ${product.image ? `url('${product.image}') center/cover no-repeat` : '#222'};`}>
                         </div>
                         <div class="product-info" style="background: #1a1a1a; color: #fff;">
                             <h3>{product.name}</h3>
                             <p style="color: #aaa;">{product.description}</p>
                         </div>
-                    </div>
-                ))}
+                    </CardElement>
+                )})}
             </div>
         </div>
     </div>

@@ -6,6 +6,8 @@ interface Product {
     status: string;
     bgColor: string;
     textColor: string;
+    image?: string | null;
+    link?: string | null;
 }
 interface Props {
   title: string;
@@ -22,17 +24,19 @@ const { title, subtitle, products } = Astro.props;
                 <p class="section-desc text-muted">{subtitle}</p>
             </div>
             <div class="product-grid reveal">
-                {products.map(product => (
-                    <div class="product-card shadow-sm">
-                        <div class="product-img-placeholder" style={`background: ${product.bgColor};`}>
-                            <span class="badge" style={`color: ${product.textColor};`}>{product.status}</span>
+                {products.map(product => {
+                    const CardElement = product.link ? 'a' : 'div';
+                    return (
+                    <CardElement href={product.link || undefined} target={product.link ? "_blank" : undefined} class="product-card shadow-sm" style={product.link ? 'text-decoration: none; color: inherit; display: block; cursor: pointer;' : 'display: block;'}>
+                        <div class="product-img-placeholder" style={`background: ${product.image ? `url('${product.image}') center/cover no-repeat` : product.bgColor}; position: relative;`}>
+                            <span class="badge" style={`color: ${product.textColor}; ${product.image ? 'background: rgba(255,255,255,0.95); box-shadow: 0 4px 10px rgba(0,0,0,0.1); font-weight: bold;' : ''}`}>{product.status}</span>
                         </div>
                         <div class="product-info bg-main">
                             <h3 class="text-main">{product.name}</h3>
                             <p class="text-muted">{product.description}</p>
                         </div>
-                    </div>
-                ))}
+                    </CardElement>
+                )})}
             </div>
         </div>
     </div>

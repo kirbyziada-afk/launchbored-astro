@@ -36,6 +36,8 @@ collections:
               - {label: "Status", name: "status", widget: "string"}
               - {label: "Background Color", name: "bgColor", widget: "string", default: "#f1f1f1"}
               - {label: "Text Color", name: "textColor", widget: "string", default: "#111"}
+              - {label: "Image", name: "image", widget: "image", required: false}
+              - {label: "Link URL", name: "link", widget: "string", required: false}
           
           - {label: "Coming Soon Title", name: "comingSoonTitle", widget: "string"}
           - {label: "Coming Soon Subtitle", name: "comingSoonSubtitle", widget: "string"}
@@ -45,6 +47,8 @@ collections:
             fields:
               - {label: "Name", name: "name", widget: "string"}
               - {label: "Description", name: "description", widget: "string"}
+              - {label: "Image", name: "image", widget: "image", required: false}
+              - {label: "Link URL", name: "link", widget: "string", required: false}
           
           - {label: "Waitlist Title", name: "waitlistTitle", widget: "string"}
           - {label: "Waitlist Subtitle", name: "waitlistSubtitle", widget: "string"}
