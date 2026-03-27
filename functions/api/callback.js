@@ -22,20 +22,21 @@ export async function onRequestGet(context) {
     const data = await response.json();
     const token = data.access_token;
     
-    // Inject the successfully generated token directly back into the Decap CMS window environment
-    const provider = 'github';
+    // Inject the successfully generated token directly back into the Decap CMS window environment using the official two-way handshake!
     const responseBody = `
-      <script>
-        const message = {
-          token: '${token}',
-          provider: '${provider}'
-        };
-        window.opener.postMessage(
-          'authorization:github:success:' + JSON.stringify(message),
-          '*'
-        );
-        window.close();
-      </script>
+      <!doctype html><html><body><script>
+        (function() {
+          function receiveMessage(e) {
+            window.opener.postMessage(
+              'authorization:github:success:{"token":"${token}","provider":"github"}',
+              e.origin
+            );
+          }
+          window.addEventListener("message", receiveMessage, false);
+          // Alert the parent window that we are ready to deliver the payload
+          window.opener.postMessage("authorizing:github", "*");
+        })();
+      </script></body></html>
     `;
     
     return new Response(responseBody, {
