@@ -2,7 +2,7 @@ backend:
   name: github
   repo: kirbyziada-afk/launchbored-astro
   branch: main
-  base_url: https://launchbored-astro.pages.dev
+  base_url: https://launchbored.com
   auth_endpoint: api/auth
 
 # This enables local testing via npx decap-server
