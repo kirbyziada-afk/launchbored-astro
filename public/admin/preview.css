@@ -1,0 +1,44 @@
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Outfit:wght@400;500;700&family=Oswald:wght@700&display=swap');
+
+/* LaunchBored CMS Preview Styles */
+body {
+    font-family: 'Outfit', sans-serif;
+    background-color: #111;
+    color: #eaeaea;
+    padding: 2rem;
+    line-height: 1.6;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Anton', 'Oswald', sans-serif;
+    letter-spacing: 1px;
+    color: #fff;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+}
+
+/* Custom rainbow gradient for highlighting specific titles like in the live site */
+strong {
+    background: linear-gradient(90deg, #ff007f, #7f00ff, #00d4ff);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: bold;
+}
+
+/* Basic card styling for product lists in the preview */
+ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+li {
+    background-color: #1a1a1a;
+    padding: 15px;
+    border-radius: 8px;
+    border: 1px solid #333;
+}
