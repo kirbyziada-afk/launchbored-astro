@@ -25,7 +25,10 @@ const { title, subtitle, products } = Astro.props;
                     const CardElement = product.link ? 'a' : 'div';
                     return (
                     <CardElement href={product.link || undefined} target={product.link ? "_blank" : undefined} class="product-card coming-soon-card" style={product.link ? 'text-decoration: none; color: inherit; display: block; cursor: pointer;' : 'display: block;'}>
-                        <div class="product-img-placeholder" style={`background: ${product.image ? `url('${product.image}') center/cover no-repeat` : '#222'};`}>
+                        <div class="product-img-placeholder" style="background: #222; position: relative; overflow: hidden;">
+                            {product.image && (
+                                <img src={product.image} alt={product.name} style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: 1;" />
+                            )}
                         </div>
                         <div class="product-info" style="background: #1a1a1a; color: #fff;">
                             <h3>{product.name}</h3>

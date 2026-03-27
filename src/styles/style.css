@@ -711,7 +711,7 @@ a {
     overflow: hidden;
     transition: transform var(--transition-bouncy), box-shadow var(--transition-fast);
     box-shadow: 0 12px 24px rgba(0,0,0,0.04);
-    max-width: 450px;
+    max-width: 600px;
     margin: 0 auto;
 }
 .product-card:hover {
