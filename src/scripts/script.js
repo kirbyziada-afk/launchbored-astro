@@ -236,19 +236,51 @@ document.addEventListener('DOMContentLoaded', () => {
 
     /* Form Submission */
     document.querySelectorAll('form').forEach(form => {
-        form.addEventListener('submit', (e) => {
+        form.addEventListener('submit', async (e) => {
             e.preventDefault();
             const btn = form.querySelector('button[type="submit"]');
             const originalText = btn.textContent;
-            btn.textContent = 'Awesome! Sent 🚀';
-            btn.style.backgroundColor = '#16a085';
-            btn.style.color = '#fff';
             
+            // Cosmetic loading state
+            btn.textContent = 'Sending...';
+            btn.style.opacity = '0.8';
+            btn.disabled = true;
+
+            // Formulate payload
+            const formData = new FormData(form);
+            const actionUrl = form.getAttribute('action') || 'https://api.web3forms.com/submit';
+
+            try {
+                // Background transmission
+                const response = await fetch(actionUrl, {
+                    method: 'POST',
+                    body: formData
+                });
+
+                if (response.ok) {
+                    btn.textContent = 'Awesome! Sent 🚀';
+                    btn.style.backgroundColor = '#16a085';
+                    btn.style.color = '#fff';
+                    btn.style.opacity = '1';
+                    form.reset(); // Clear user inputs on success
+                } else {
+                    btn.textContent = 'Error! Try Again.';
+                    btn.style.backgroundColor = '#e74c3c';
+                    btn.style.color = '#fff';
+                }
+            } catch (error) {
+                    btn.textContent = 'Error! Try Again.';
+                    btn.style.backgroundColor = '#e74c3c';
+                    btn.style.color = '#fff';
+            }
+            
+            // Reset visual state after 3 seconds
             setTimeout(() => {
                 btn.textContent = originalText;
                 btn.style.backgroundColor = '';
                 btn.style.color = '';
-                form.reset();
+                btn.style.opacity = '1';
+                btn.disabled = false;
             }, 3000);
         });
     });
