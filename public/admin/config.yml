@@ -1,6 +1,8 @@
 backend:
-  name: git-gateway
-  branch: main # Branch to update (optional; defaults to master)
+  name: github
+  repo: kirbyziada-afk/launchbored-astro
+  branch: main
+  app_id: "Iv23lir5QO7Q3yXMapPH"
 
 # This enables local testing via npx decap-server
 # local_backend: true
