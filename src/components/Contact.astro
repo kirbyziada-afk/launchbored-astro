@@ -14,20 +14,22 @@ const { title, subtitle } = Astro.props;
                 <p class="section-desc text-white">{subtitle}</p>
             </div>
             <div class="contact-wrapper premium-dark-card">
-                <form class="contact-form" style="text-align: left;">
+                <form action="https://api.web3forms.com/submit" method="POST" class="contact-form" style="text-align: left;">
+                    <input type="hidden" name="access_key" value="d5758a69-a0f4-46d8-b437-7783e3d17b98">
+                    <input type="hidden" name="subject" value="New Project Inquiry from LaunchBored">
                     <div class="form-row">
                         <div class="form-group">
                             <label for="name" class="text-white">Name</label>
-                            <input type="text" id="name" class="premium-input" placeholder="John Doe" required>
+                            <input type="text" name="name" id="name" class="premium-input" placeholder="John Doe" required>
                         </div>
                         <div class="form-group">
                             <label for="email" class="text-white">Email</label>
-                            <input type="email" id="email" class="premium-input" placeholder="john@example.com" required>
+                            <input type="email" name="email" id="email" class="premium-input" placeholder="john@example.com" required>
                         </div>
                     </div>
                     <div class="form-group">
                         <label for="budget" class="text-white">Budget</label>
-                        <select id="budget" class="premium-input premium-select" required>
+                        <select name="budget" id="budget" class="premium-input premium-select" required>
                             <option value="" disabled selected>Select a budget...</option>
                             <option value="30k-50k" style="color: #000;">Starting at $30k</option>
                             <option value="50k-100k" style="color: #000;">$50k - $100k</option>
@@ -36,7 +38,7 @@ const { title, subtitle } = Astro.props;
                     </div>
                     <div class="form-group">
                         <label for="message" class="text-white">Message</label>
-                        <textarea id="message" class="premium-input" rows="4" placeholder="Tell us about your idea..." required></textarea>
+                        <textarea name="message" id="message" class="premium-input" rows="4" placeholder="Tell us about your idea..." required></textarea>
                     </div>
                     <button type="submit" class="btn btn-primary btn-large" style="width: 100%; background: #fff; color: #000; margin-top: 10px;">Send Message</button>
                 </form>
